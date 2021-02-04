@@ -1,5 +1,6 @@
 {
 	interface Stack {
+		readonly size: number;
 		push: (item: string) => void;
 		pop: () => Item;
 		printPostOrder: () => void;
@@ -8,31 +9,28 @@
 
 	class Item {
 		value: string;
-		prev: Item | null;
 		next: Item | null;
-		constructor(value: string, next: Item | null = null, prev: Item | null = null) {
+		constructor(value: string, next: Item | null = null) {
 			this.value = value;
-			this.prev = prev;
 			this.next = next;
 		}
 	}
 
 	class StackImp implements Stack {
 		head: Item | null;
+		size: number;
 		constructor() {
 			this.head = null;
+			this.size = 0;
 		}
 
 		pop() {
 			if (this.head) {
 				const popedItem = this.head;
 				const nextHead = this.head.next;
-				if (nextHead?.prev) {
-					nextHead.prev = null;
-				}
 				popedItem.next = null;
 				this.head = nextHead;
-
+				this.size -= 1;
 				return popedItem;
 			} else {
 				throw new Error("no item to pop");
@@ -47,19 +45,19 @@
 				const current = this.head;
 				this.head = new Item(item);
 				this.head.next = current;
-				current.prev = this.head;
 			}
+			this.size += 1;
 		}
 		printPostOrder() {
 			if (!this.head) {
-				throw new Error("no items");
+				return;
 			}
 			this.printItemPostOrder(this.head);
 		}
 
 		printPreOrder() {
 			if (!this.head) {
-				throw new Error("no items");
+				return;
 			}
 			this.printItemPreOrder(this.head);
 		}
@@ -95,4 +93,13 @@
 	stack.printPostOrder();
 	console.log("=============");
 	stack.printPreOrder();
+	console.log(stack.pop());
+	console.log(stack.pop());
+	console.log(stack.pop());
+	console.log(stack.pop());
+	console.log(stack.pop());
+	console.log(stack);
+	stack.printPostOrder();
+	console.log(stack.pop());
+	console.log(stack.size);
 }
