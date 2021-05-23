@@ -5,6 +5,9 @@
 		return Math.random() < 0.5 ? "success" : "fail";
 	}
 
+	function randomNetworkTime(){
+		return Math.random()*3000
+	}
 	function createRandomNetworkErrorState(): Reason {
 		return Math.random() < 1 / 3
 			? "offline"
@@ -33,19 +36,21 @@
 	type ResultState = SuccessState | NetworkErrorState;
 
 	class NetworkClient {
-		tryConnect(): ResultState {
+		async tryConnect(): Promise<ResultState> {
 			const randomState = createRandomState();
-
-			if (randomState === "success") {
-				return {
-					result: randomState,
-				};
-			}
-
-			return {
-				result: "fail",
-				reason: createRandomNetworkErrorState(),
-			};
+			return new Promise((resolve,reject)=>{
+				if (randomState === "success") {
+					resolve( {
+						result: randomState,
+					})
+				}
+	
+				resolve( {
+					result: "fail",
+					reason: createRandomNetworkErrorState(),
+				})
+		
+			})
 		}
 	}
 
@@ -53,10 +58,10 @@
 		// DI Dependency Injection
 		constructor(private client: NetworkClient) {}
 
-		login() {
+		async login() {
 			// let result : ResultState;
 			try {
-				const result = this.client.tryConnect();
+				const result = await this.client.tryConnect();
 				if (result.result === "success") {
 					// login logic
 					console.log("Do login...");
