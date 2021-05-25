@@ -30,9 +30,33 @@
 		[P in keyof T]?: T[P]; // for ... in
 	};
 
+	// map type을 이용하면 재사용성이 높아진다
 	type VideoOptional = Optional<Video>;
 
-	const videoOptional: VideoOptional = {};
+	const videoOptional: VideoOptional = {
+		title: "123",
+		author: "12",
+		description: "123",
+	};
+
+	type Animal = {
+		name: string;
+		age: number;
+	};
+
+	const animal: Optional<Animal> = {
+		name: "123",
+	};
+
+	type ReadOlny<T> = {
+		readonly [P in keyof T]: T[P];
+	};
+
+	const video: ReadOlny<Video> = {
+		description: "a",
+		author: "112",
+		title: "asd",
+	};
 
 	type Nullable<T> = {
 		[P in keyof T]: T[P] | null;
