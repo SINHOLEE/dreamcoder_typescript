@@ -94,6 +94,6 @@
     // interface는 절대 만들 수 없다.
 
     // 인터페이스는 직접 할당이 안되므로... computed properties를 사용할 수 없다...?인가 잘 모르겠다!
-    interface NameInterface = PersonInterface['name']
+    // interface NameInterface = PersonInterface['name']
     
 }

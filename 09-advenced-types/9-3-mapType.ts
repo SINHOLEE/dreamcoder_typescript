@@ -5,6 +5,7 @@
 		title: string;
 		author: string;
 		// 2. 또는 새로운 프로퍼티가 추가되곤 한다.
+		// [1,2].map(item=>item*item)
 		description: string;
 	};
 
@@ -61,4 +62,9 @@
 	type Nullable<T> = {
 		[P in keyof T]: T[P] | null;
 	};
+	type Readonly<T> = {
+		readonly [P in keyof T]: T[P];
+	};
+	const videoReadonly: Readonly<Video> = {author: "작가", description: "설명", title: "제목"};
+	// videoReadonly.author = 'a'
 }

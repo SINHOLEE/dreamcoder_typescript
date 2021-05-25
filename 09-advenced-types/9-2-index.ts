@@ -23,4 +23,5 @@
 	type LegsType = Animal["legsType"]; // 상위 타입에서 하위타입을 불러올 수 도 있다.
 
 	type Keys = keyof Animal; // 와 Animal에 속해있는 properties를 할당할 수 있다...
+
 }
