@@ -1,13 +1,10 @@
 {
-	"name": "typescriptTIL",
 	"version": "1.0.0",
 	"main": "index.js",
 	"license": "MIT",
 	"devDependencies": {
 		"ts-node": "^9.1.1",
-		"typescript": "^4.1.3"
-	},
-	"dependencies": {
+		"typescript": "^4.1.3",
 		"axios": "^0.21.1"
 	}
 }
