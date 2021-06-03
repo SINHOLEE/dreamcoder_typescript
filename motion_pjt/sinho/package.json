@@ -1,0 +1,10 @@
+{
+  "name": "sinho",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^15.6.1",
+    "typescript": "^4.3.2"
+  }
+}

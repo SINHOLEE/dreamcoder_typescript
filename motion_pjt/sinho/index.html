@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script defer src="./build/app.js"></script>
+		<link rel="stylesheet" href="./src/app.css" />
+		<title>Motion❤</title>
+	</head>
+	<body>
+		<div id="app" onscroll="javascript:console.log(1)">
+			<div class="main">
+				<div class="main__header">
+					<div class="main__header__title">MOTION</div>
+					<div class="main__header__button__wrapper">
+						<button id="image">image</button>
+						<button id="video">video</button>
+						<button id="note">note</button>
+						<button id="task">task</button>
+					</div>
+				</div>
+				<ul class="main__body">
+					<li class="main__body__item">
+						<img
+							loading="lazy"
+							class="left"
+							src="https://picsum.photos/300/200?tr=w-1,h-1:w-300,h-200"
+							alt="무슨무슨이미지"
+						/>
+						<div class="right">
+							<div class="text">text</div>
+							<div class="delete">❌</div>
+						</div>
+					</li>
+
+					<li class="main__body__item">
+						<div class="note">
+							<div class="title">title</div>
+							<div class="content">body</div>
+							<div class="delete">❌</div>
+						</div>
+					</li>
+					<li class="main__body__item">
+						<div class="task">
+							<div class="title">title</div>
+
+							<div class="content">
+								<input type="checkbox" name="done" checked />
+								<span> body </span>
+							</div>
+							<div class="delete">❌</div>
+						</div>
+					</li>
+					<li class="main__body__item">
+						<iframe
+							class="left"
+							width="300"
+							height="200"
+							src="https://www.youtube.com/embed/7UOVXhdVNlM"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen
+						></iframe>
+						<div class="right">
+							<div class="text">text</div>
+							<div class="delete">❌</div>
+						</div>
+					</li>
+					<li class="main__body__item">
+						<iframe
+							loading="lazy"
+							class="left"
+							width="300"
+							height="200"
+							src="https://www.youtube.com/embed/7UOVXhdVNlM"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen
+						></iframe>
+						<div class="right">
+							<div class="text">text</div>
+							<div class="delete">❌</div>
+						</div>
+					</li>
+					<li class="main__body__item">
+						<img
+							loading="lazy"
+							class="left"
+							src="https://picsum.photos/id/20/300/200"
+							alt="무슨무슨이미지"
+						/>
+						<div class="right">
+							<div class="text">text</div>
+							<div class="delete">❌</div>
+						</div>
+					</li>
+					<li class="main__body__item">
+						<iframe
+							loading="lazy"
+							class="left"
+							width="300"
+							height="200"
+							src="https://www.youtube.com/embed/7UOVXhdVNlM"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen
+						></iframe>
+						<div class="right">
+							<div class="text">text</div>
+							<div class="delete">❌</div>
+						</div>
+					</li>
+				</ul>
+				<footer class="main__footer">
+					<div>@Copyright by SINHOLEE</div>
+				</footer>
+			</div>
+		</div>
+	</body>
+</html>
