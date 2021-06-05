@@ -3,13 +3,16 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, minimun-scale=1.0, maximun-scale=1.0, user-scalable=no"
+		/>
 		<script defer src="./build/app.js"></script>
 		<link rel="stylesheet" href="./src/app.css" />
 		<title>Motion❤</title>
 	</head>
 	<body>
-		<div id="app" onscroll="javascript:console.log(1)">
+		<div id="app" onclick="javascript:console.log(2)">
 			<div class="main">
 				<div class="main__header">
 					<div class="main__header__title">MOTION</div>
@@ -20,7 +23,7 @@
 						<button id="task">task</button>
 					</div>
 				</div>
-				<ul class="main__body">
+				<ul class="main__body" onscroll="javascript:console.log(1)">
 					<li class="main__body__item">
 						<img
 							loading="lazy"
@@ -115,9 +118,9 @@
 						</div>
 					</li>
 				</ul>
-				<footer class="main__footer">
+				<div class="main__footer">
 					<div>@Copyright by SINHOLEE</div>
-				</footer>
+				</div>
 			</div>
 		</div>
 	</body>
