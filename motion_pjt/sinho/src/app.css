@@ -175,7 +175,54 @@ button {
 	align-items: center;
 	overflow-y: auto;
 }
+.modal {
+	position: absolute;
+	background-color: rgb(61, 61, 61, 0.7);
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+}
+.modal form {
+	width: 300px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-areas:
+		'form-type form-type form-type form-type'
+		'. . . .'
+		'title-label title title title'
+		'content-label content content content'
+		'cancel-btn cancel-btn submit-btn submit-btn';
+	text-align: center;
 
+	padding: 50px;
+	border: 1px solid black;
+	border-radius: 25px;
+	background-color: #ffc348;
+}
+.modal form .title-label {
+	grid-area: title-label;
+}
+.modal form .form-type {
+	grid-area: form-type;
+}
+.modal form .title {
+	grid-area: title;
+}
+.modal form .content-label {
+	grid-area: content-label;
+}
+.modal form .content {
+	grid-area: content;
+}
+.modal form .cancel-btn {
+	grid-area: cancel-btn;
+}
+.modal form .submit-btn {
+	grid-area: submit-btn;
+}
 .main {
 	height: 100vh;
 	display: grid;
