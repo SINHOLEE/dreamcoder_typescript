@@ -352,3 +352,6 @@ button {
 	height: 50px;
 	color: var(--smokywhite);
 }
+.hidden {
+	display: none;
+}
